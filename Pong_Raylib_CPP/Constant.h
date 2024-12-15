@@ -8,6 +8,8 @@ const Color Light_Green = Color{ 129, 204, 184, 255 };
 const Color Yellow = Color{ 243, 185, 154, 255 };
 
 // window
+const int FPS_Target = 60;
+const char title[]{ "Pong" };
 const int target_FPS = 60;
 const int window_width = 1280;
 const int window_height = 800;

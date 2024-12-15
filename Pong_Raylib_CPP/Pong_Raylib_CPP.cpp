@@ -86,8 +86,7 @@ public:
 
     void change_x_direction() {
         // generate random value for speed value3
-        int random_x = 1 + rand() % ball_max_speed_x;
-        random_x = max(ball_min_speed_x, random_x);
+        int random_x = ball_min_speed_x + rand() % ball_max_speed_x;
 
         if (speed_x > 0) {
             speed_x = -random_x;
@@ -96,9 +95,8 @@ public:
             speed_x = random_x;
         }
 
-        // generate random value for angle value
-        int random_y = 1 + rand() % ball_max_speed_y;
-        random_y = max(ball_min_speed_y, random_y);
+        // generate random value for angle valuee
+        int random_y = ball_min_speed_y + rand() % ball_max_speed_y;
 
         if (speed_y > 0) {
             speed_y = -random_y;
@@ -204,8 +202,8 @@ void draw_scene();
 
 int main(){
     cout << "Game starting." << endl;
-    InitWindow(window_width, window_height, "Pong");
-    SetTargetFPS(60);
+    InitWindow(window_width, window_height, title);
+    SetTargetFPS(FPS_Target);
 
     Ball ball = Ball(screen_center_x, screen_center_y, ball_radius, ball_start_speed_x, ball_start_speed_y, ball_color);
 
